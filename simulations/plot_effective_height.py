@@ -350,7 +350,7 @@ if __name__ == "__main__":
     #####################
 
     plot_gain(data_air, n_air, legend = False, labels = False)
-    plot_gain(data_ice, n_ice, new_figure = False, color = "blue", linestyle = "--", legend = False, labels = False)
+    plot_gain(data_ice, n_ice, new_figure = False, color = "blue", linestyle = "-", legend = False, labels = False)
 
     plt.plot([], [], color="blue", label = "In Ice")
     plt.plot([], [], color="purple", label = "In Air")
@@ -384,7 +384,7 @@ if __name__ == "__main__":
     #############
 
     plot_vswr(component_name, base_name_air, labels = False)
-    plot_vswr(component_name, base_name_ice, new_figure = False, color = "blue", linestyle = "--", legend = False, labels = False)
+    plot_vswr(component_name, base_name_ice, new_figure = False, color = "blue", linestyle = "-", legend = False, labels = False)
 
     plt.plot([], [], color="blue", label = "In Ice")
     plt.plot([], [], color="purple", label = "In Air")
@@ -406,7 +406,7 @@ if __name__ == "__main__":
     #########################
 
     plot_effective_height(data_air, n_air, legend = False, labels = False)
-    plot_effective_height(data_ice, n_ice, new_figure = False, color = "blue", linestyle = "--", legend = False, labels = False)
+    plot_effective_height(data_ice, n_ice, new_figure = False, color = "blue", linestyle = "-", legend = False, labels = False)
 
     plt.plot([], [], color="blue", label = "In Ice")
     plt.plot([], [], color="purple", label = "In Air")
