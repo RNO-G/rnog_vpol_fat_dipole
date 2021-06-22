@@ -83,10 +83,10 @@ def plot_effective_height(data, n, new_figure = True, color = "Purple", linestyl
     for i_azimuth_angle, azimuth_angle in enumerate(azimuth_angles):
         for i_zenith_angle, zenith_angle in enumerate(zenith_angles):
 
-            if(zenith_angle != 60):
-                continue
-            #if(zenith_angle != 90):
+            #if(zenith_angle != 60):
             #    continue
+            if(zenith_angle != 90):
+                continue
 
             trace_ = np.fft.fftshift(h_the[i_azimuth_angle][i_zenith_angle])
             ts_ = ts - ts[np.argmin(trace_)]
@@ -98,7 +98,7 @@ def plot_effective_height(data, n, new_figure = True, color = "Purple", linestyl
         if(legend):
             plt.legend(loc = 'lower right', title = "Azimuth Angles")
 
-        plt.title("In-Ice Realized Effective Height at Boresight / $90^\circ$ Zenith of VPol v2 \n Air: n = 1.0, Ice: n = 1.75")
+        plt.title("In-Ice Realized Effective Height at Boresight / $90^\circ$ Zenith of VPol v2 \n n$_{air}$ = 1.0, Ice: n = 1.75")
         plt.minorticks_on()
         plt.grid(which = "major")
         plt.grid(which = "minor", alpha = 0.25)
@@ -352,20 +352,20 @@ if __name__ == "__main__":
     plot_gain(data_air, n_air, legend = False, labels = False)
     plot_gain(data_ice, n_ice, new_figure = False, color = "blue", linestyle = "--", legend = False, labels = False)
 
-    plt.plot([], [], color="purple", label = "In Ice")
-    plt.plot([], [], color="blue", label = "In Air")
+    plt.plot([], [], color="blue", label = "In Ice")
+    plt.plot([], [], color="purple", label = "In Air")
 
-    plt.scatter([124.0], [-1], color = "purple")
-    plt.scatter([144.0], [-1], color = "blue")
+    plt.scatter([124.0], [-1], color = "blue")
+    plt.scatter([144.0], [-1], color = "purple")
 
-    plt.scatter([607.0], [-1], color = "purple")
-    plt.scatter([578.0], [-1], color = "blue")
+    plt.scatter([607.0], [-1], color = "blue")
+    plt.scatter([578.0], [-1], color = "purple")
 
-    plt.text(150, -1.5, "~145 MHz", color = "blue")
-    plt.text(10, -0.6, "~125 MHz", color = "purple")
+    plt.text(150, -1.5, "~145 MHz", color = "purple")
+    plt.text(10, -0.6, "~125 MHz", color = "blue")
 
-    plt.text(460, -1.5, "~580 MHz", color = "blue")
-    plt.text(610, -0.6, "~610 MHz", color = "purple")
+    plt.text(460, -1.5, "~580 MHz", color = "purple")
+    plt.text(610, -0.6, "~610 MHz", color = "blue")
 
     plt.minorticks_on()
     plt.grid(which = "major")
@@ -386,8 +386,8 @@ if __name__ == "__main__":
     plot_vswr(component_name, base_name_air, labels = False)
     plot_vswr(component_name, base_name_ice, new_figure = False, color = "blue", linestyle = "--", legend = False, labels = False)
 
-    plt.plot([], [], color="purple", label = "In Ice")
-    plt.plot([], [], color="blue", label = "In Air")
+    plt.plot([], [], color="blue", label = "In Ice")
+    plt.plot([], [], color="purple", label = "In Air")
 
     plt.title("VSWR of VPol v2 \n Air: n = 1.0, Ice: n = 1.75")
     plt.xlim(0.0, 750.0)
@@ -408,8 +408,8 @@ if __name__ == "__main__":
     plot_effective_height(data_air, n_air, legend = False, labels = False)
     plot_effective_height(data_ice, n_ice, new_figure = False, color = "blue", linestyle = "--", legend = False, labels = False)
 
-    plt.plot([], [], color="purple", label = "In Ice")
-    plt.plot([], [], color="blue", label = "In Air")
+    plt.plot([], [], color="blue", label = "In Ice")
+    plt.plot([], [], color="purple", label = "In Air")
 
     plt.title("Effective Height at Boresight / $90^\circ$ Zenith of VPol v2 \n Air: n = 1.0, Ice: n = 1.75")
     plt.legend()
