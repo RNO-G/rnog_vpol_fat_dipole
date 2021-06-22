@@ -377,6 +377,8 @@ if __name__ == "__main__":
     plt.legend(loc = "upper right")
     plt.title("Realized Gain at Boresight / $90^\circ$ Zenith of VPol v2 \n Air: n = 1.0, Ice: n = 1.75")
 
+    plt.savefig("plots/vpol_v2_realized_gain_freq_domain.pdf")
+
     #############
     # plot vswr #
     #############
@@ -397,6 +399,8 @@ if __name__ == "__main__":
     plt.ylabel("VSWR")
     plt.legend()
 
+    plt.savefig("plots/vpol_v2_vswr.pdf")
+
     #########################
     # plot effective height #
     #########################
@@ -414,6 +418,8 @@ if __name__ == "__main__":
     plt.ylim(-0.04, 0.04)
     plt.xlim(-5.0, 20.0)
     plt.grid()
+
+    plt.savefig("plots/vpol_v2_effective_height_time_domain.pdf")
 
     ########
     # show #
